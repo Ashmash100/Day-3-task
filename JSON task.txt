@@ -1,0 +1,219 @@
+Problem 0 : Part A (15 mins):
+
+var cat = {
+ name: "Fluffy",
+ activities: ["play", "eat cat food"],
+ heigth: 23,
+ weight: 7,
+ catFriends: [
+ {
+ name: "bar",
+ activities: ["be grumpy", "eat bread omblet","bark","jump"],
+ weight: 8,
+ furcolor: "white"
+ }, 
+ {
+ name: "foo",
+ activities: ["sleep", "pre-sleep naps","bite","fetch"],
+ weight: 3,
+ furcolor: "orange"
+ }
+ ]
+}
+
+
+// List all the activities of Fluffyy’s catFriends.
+
+  cat.catFriends.forEach(value => console.log(value.activities));
+
+// Print the catFriends names.
+
+  cat.catFriends.forEach(value => console.log(value.name));
+
+// Print the total weight of catFriends
+
+  var sum = 0;
+  cat.catFriends.forEach(value => sum+= value.weight);
+  console.log(sum);
+  
+// Print the total activities of all cats (op:6)  
+ 
+  let count = 0;
+  count += cat.activities.length
+  cat.catFriends.forEach(value => count += value.activities.length);
+  console.log(count);
+  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Problem 0 : Part B (15 mins):
+
+var myCar = {
+ make: "Bugatti",
+ model: "Bugatti La Voiture Noire",
+ year: 2019,
+ accidents: [
+ {
+ date: "3/15/2019",
+ damage_points: "5000",
+ atFaultForAccident: true
+ },
+ {
+ date: "7/4/2022",
+ damage_points: "2200",
+ atFaultForAccident: true
+ },
+ {
+ date: "6/22/2021",
+ damage_points: "900",
+ atFaultForAccident: true
+ }
+ ]
+}
+
+// 1. Loop over the accidents array. Change atFaultForAccident from true to false.
+ 
+ myCar.accidents.forEach(v => v.atFaultForAccident = false);
+ 
+// 2. Print the dated of my accidents 
+
+ myCar.accidents.forEach(v => console.log(v.date));  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Problem 1 (5 mins):
+
+var obj = {name : "RajiniKanth", age : 33, hasPets : false};
+function printAllValues() {
+ console.log(Object.values(obj));
+}
+
+printAllValues();
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Problem 2(5 mins):
+
+var obj = {name : "RajiniKanth", age : 33, hasPets : false};
+function printAllValues() {
+ console.log(Object.keys(obj));
+}
+
+printAllValues();
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Problem 3( 7–9 mins):
+
+var obj = {name: "ISRO", age: 35, role: "Scientist"};
+function convertListToObject(obj) {
+ var output = Object.keys(obj).map((key) => [key, obj[key]]);
+ console.log(output);
+}
+
+convertListToObject(obj);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Problem 4( 5 mins):
+
+var arr = ['GUVI', 'I', 'am', 'a geek'];
+function transformFirstAndLast(arr) {
+ var a = arr[0];
+ var b = arr[arr.length-1];
+ var newObject = {}
+ newObject.a = b;
+ return newObject;
+ 
+}
+
+console.log(transformFirstAndLast(arr));
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Problem 5 ( 7 -9 mins):
+
+var arr = [["make", "Ford"], ["model", "Mustang"], ["year", 1964]];
+function fromListToObject(arr) {
+ var newObject = Object.fromEntries(arr);
+ console.log(newObject);
+};
+
+fromListToObject(arr);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Problem 8(10 mins):
+
+var securityQuestions = [
+ {
+ question: 'What was your first pet’s name?',
+ expectedAnswer: 'FlufferNutter'
+ },
+ {
+ question: 'What was the model year of your first car?',
+ expectedAnswer: '1985'
+ },
+ {
+ question: 'What city were you born in?',
+ expectedAnswer: 'NYC'
+ }
+]
+
+
+var qns = 'What was your first pet’s name?';
+var ans = 'FlufferNutter';
+
+
+function chksecurityQuestions(securityQuestions,qns,ans) {
+  var temp = []
+  securityQuestions.forEach(function(value) {
+    if( value.question == qns && value.expectedAnswer == ans  ) {
+        temp.push(value.expectedAnswer);
+    }
+  });
+  if( temp.length > 0 ) {
+      return true;
+  } else {
+      return false;
+  }
+ 
+};
+
+var status =  chksecurityQuestions(securityQuestions,qns,ans);
+
+console.log(status); 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Problem 9(20 mins):
+
+var students = [
+ {name: 'Siddharth Abhimanyu', age: 21}, { name: 'Malar', age: 25},
+ {name: 'Maari',age: 18},{name: 'Bhallala Deva',age: 17},
+ {name: 'Baahubali',age: 16},{name: 'AAK chandran',age: 23},
+ {name:'Gabbar Singh',age: 33},{name: 'Mogambo',age: 53},
+ {name: 'Munnabhai',age: 40},{name: 'Sher Khan',age: 20},
+ {name: 'Chulbul Pandey',age: 19},{name: 'Anthony',age: 28},
+ {name: 'Devdas',age: 56} 
+ ];
+ 
+ 
+function returnMinors(arr)
+{
+ var output =  arr.filter(value => value.age < 20);   
+ return output; 
+}
+
+console.log(returnMinors(students));
+
+
+
+
+
+
+
+
